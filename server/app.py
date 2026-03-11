@@ -299,7 +299,7 @@ def chat():
                 'max_tokens': 2000,
                 'temperature': 0.7
             },
-            timeout=240
+            timeout=360
         )
         if resp.status_code != 200:
             error_msg = 'AI API 错误: HTTP %d' % resp.status_code
