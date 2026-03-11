@@ -479,28 +479,36 @@ def banker_analyze():
 
     number_risks.sort(key=lambda x: -x['payout'])
 
+    # 统一字段名：numberRisks 中的 net -> netProfit
+    for nr in number_risks:
+        nr['netProfit'] = nr.pop('net', 0)
+
+    # recommendation 值映射：accept/caution/reject -> 吃单/谨慎/拒单
+    rec_label_map = {'accept': '吃单', 'caution': '谨慎', 'reject': '拒单'}
+    rec_label = rec_label_map.get(rec, rec)
+
     math_result = {
         'coveredCount': covered_count,
         'coveredNumbers': covered_numbers,
         'numberAmounts': {str(k): round(v, 2) for k, v in number_amounts.items()},
-        'numberRisks': number_risks[:20],
-        'totalCollected': round(total_collected, 2),
+        'numberDetails': number_risks[:20],
+        'totalBetAmount': round(total_collected, 2),
         'baseProb': round(base_prob_total * 100, 2),
         'adjustedProb': round(adj_prob_total * 100, 2),
         'evBase': round(ev_base, 2),
-        'evAdjusted': round(ev_adjusted, 2),
-        'evRatio': round(ev_ratio * 100, 2),
-        'maxLoss': round(max_loss, 2),
-        'maxPayoutNum': max_payout_num,
+        'expectedProfit': round(ev_adjusted, 2),
+        'profitRate': round(ev_ratio * 100, 2),
+        'worstLoss': round(max_loss, 2),
+        'worstNumber': max_payout_num,
         'maxPayout': round(max_payout, 2),
         'maxProfit': round(total_collected, 2),
         'recentHits': total_recent_hits,
         'recentRange': recent_range,
         'minMissing': min_missing,
         'totalDraws': total_draws,
-        'recommendation': rec,
+        'recommendation': rec_label,
         'recText': rec_text,
-        'risk': risk_level,
+        'riskLevel': risk_level,
         'worstNum': worst_num,
         'betDetails': bet_details,
     }
