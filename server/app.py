@@ -479,10 +479,6 @@ def banker_analyze():
 
     number_risks.sort(key=lambda x: -x['payout'])
 
-    # 统一字段名：numberRisks 中的 net -> netProfit
-    for nr in number_risks:
-        nr['netProfit'] = nr.pop('net', 0)
-
     # recommendation 值映射：accept/caution/reject -> 吃单/谨慎/拒单
     rec_label_map = {'accept': '吃单', 'caution': '谨慎', 'reject': '拒单'}
     rec_label = rec_label_map.get(rec, rec)
@@ -552,6 +548,10 @@ def banker_analyze():
     lines.append('2. **【风险分析】** 重点关注哪些高风险号码，资金敞口分布')
     lines.append('3. **【走势解读】** 结合近期走势和遗漏值，哪些号码最危险')
     lines.append('4. **【建议】** 如果部分吃单，建议拒绝哪些投注项保留哪些')
+
+    # AI prompt 构建完毕，现在重命名字段给前端用
+    for nr in number_risks:
+        nr['netProfit'] = nr.pop('net', 0)
 
     ai_analysis = None
     if SILICONFLOW_API_KEY and SILICONFLOW_API_KEY != 'your_api_key_here':
