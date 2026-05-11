@@ -27,8 +27,8 @@ AI_MODELS = [
 # ============================================================
 # 数据源配置（只需要 history API，无需先获取最新期号）
 # ============================================================
-HISTORY_API_BASE = 'https://history.macaumarksix.com/history/macaujc2/expect/'
-MACAUJC_API_URL = 'https://api.macaujc.org/api/opencode/2032'
+HISTORY_API_BASE = 'https://history.macaumarksix.com/history/macaujc2/y/2026'
+MACAUJC_API_URL = 'https://macaumarksix.com/api/macaujc2.com'
 
 # ============================================================
 # 农历新年日期（用于动态计算生肖）
