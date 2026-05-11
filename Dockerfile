@@ -18,4 +18,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 5000
 
 # 1个worker + preload，避免重复预加载
-CMD ["sh", "-c", "gunicorn app:app --bind 0.0.0.0:${PORT:-5000} --workers 1 --preload --timeout 120"]
+CMD ["sh", "-c", "gunicorn app:app --bind 0.0.0.0:${PORT:-5000} --workers 1 --preload --timeout 240"]
