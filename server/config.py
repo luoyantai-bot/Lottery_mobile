@@ -17,9 +17,9 @@ SILICONFLOW_API_URL = os.environ.get('SILICONFLOW_API_URL', 'https://api.silicon
 # ============================================================
 AI_MODELS = [
     {"id": "Qwen/Qwen2.5-7B-Instruct", "name": "Qwen2.5-7B", "free": True},
-    {"id": "Pro/zai-org/GLM-4.7", "name": "GLM-4.7", "free": False},
+    {"id": "Pro/zai-org/GLM-5.1", "name": "GLM-5.1", "free": False},
     {"id": "moonshotai/Kimi-K2-Thinking", "name": "Kimi-K2", "free": False},
-    {"id": "deepseek-ai/DeepSeek-V3.2", "name": "DeepSeek-V3.2", "free": False},
+    {"id": "deepseek-ai/DeepSeek-V4-Flash", "name": "DeepSeek-V4", "free": False},
     {"id": "Pro/MiniMaxAI/MiniMax-M2.5", "name": "MiniMax-M2.5", "free": False},
     {"id": "Qwen/Qwen3-VL-32B-Instruct", "name": "Qwen3-VL", "free": False},
 ]
@@ -28,7 +28,7 @@ AI_MODELS = [
 # 数据源配置（只需要 history API，无需先获取最新期号）
 # ============================================================
 HISTORY_API_BASE = 'https://history.macaumarksix.com/history/macaujc2/y/2026'
-MACAUJC_API_URL = 'https://macaumarksix.com/api/macaujc2.com'
+MACAUJC_API_URL = 'https://history.macaumarksix.com/history/macaujc2/y/2026'
 
 # ============================================================
 # 农历新年日期（用于动态计算生肖）
