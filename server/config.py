@@ -57,5 +57,7 @@ CACHE_DURATION = int(os.environ.get('CACHE_DURATION', 300))
 REQUEST_TIMEOUT = 20
 REQUEST_RETRIES = 3
 MAX_DRAWS = 100
-CONCURRENT_WORKERS = 10
+CONCURRENT_WORKERS = int(os.environ.get('CONCURRENT_WORKERS', 4))
+HISTORY_BATCH_SIZE = int(os.environ.get('HISTORY_BATCH_SIZE', 10))
+HISTORY_FETCH_RETRIES = int(os.environ.get('HISTORY_FETCH_RETRIES', 3))
 DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
