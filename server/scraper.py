@@ -191,7 +191,7 @@ class LotteryScraper:
         logger.info("  最早: %s (%s)", candidates[-1]['issue'], candidates[-1]['date'])
 
         draws = []
-        batch_size = 20
+        batch_size = 10
 
         for batch_start in range(0, len(candidates), batch_size):
             if len(draws) >= count:
