@@ -16,12 +16,11 @@ SILICONFLOW_API_URL = os.environ.get('SILICONFLOW_API_URL', 'https://api.silicon
 # AI 模型列表
 # ============================================================
 AI_MODELS = [
-    {"id": "Qwen/Qwen2.5-7B-Instruct", "name": "Qwen2.5-7B", "free": True},
-    {"id": "Pro/zai-org/GLM-5.1", "name": "GLM-5.1", "free": False},
-    {"id": "Pro/moonshotai/Kimi-K2.6", "name": "Kimi-K2.6", "free": False},
-    {"id": "deepseek-ai/DeepSeek-V4-Flash", "name": "DeepSeek-V4", "free": False},
+    {"id": "Qwen/Qwen2.5-72B-Instruct", "name": "Qwen2.5-72B", "free": True},
+    {"id": "zai-org/GLM-4.6", "name": "GLM-4.6", "free": False},
+    {"id": "moonshotai/Kimi-K2-Thinking", "name": "Kimi-K2", "free": False},
+    {"id": "deepseek-ai/DeepSeek-V3.2", "name": "DeepSeek-V3.2", "free": False},
     {"id": "Pro/MiniMaxAI/MiniMax-M2.5", "name": "MiniMax-M2.5", "free": False},
-    {"id": "Qwen/Qwen3-VL-32B-Instruct", "name": "Qwen3-VL", "free": False},
 ]
 
 # ============================================================
